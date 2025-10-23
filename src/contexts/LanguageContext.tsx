@@ -80,7 +80,7 @@ const translations = {
     'searchNeed.findNearbyClinics': 'Find Nearby Clinics',
     'searchNeed.contactSupport': 'Contact our Support team',
     'searchNeed.contactSupportDesc': 'Local Support team and rescue organizations also have microchip scanners and can help.',
-    'searchNeed.callSupport': 'Call Support: 1-800-CHIP-PET',
+    'searchNeed.callSupport': 'Call Support: +962 7 98 98 05 04',
 
     // Hero Section
     'hero.title': 'Find Your Lost Pet with Advanced Microchip Technology',
@@ -196,7 +196,7 @@ const translations = {
     'footer.petRegistry': 'Pet Registry',
     'footer.description': 'Professional pet microchip registry connecting families with their beloved pets through innovative technology and 24/7 support.',
     'footer.lostPetEmergency': 'Lost Pet Emergency',
-    'footer.emergencyPhone': '1-800-CHIP-PET',
+    'footer.emergencyPhone': '+962 7 98 98 05 04T',
     'footer.emergencyAvailable': 'Available 24/7 for immediate assistance.',
     'footer.services': 'Services',
     'footer.professionalMicrochipping': 'Professional Microchipping',
@@ -211,7 +211,7 @@ const translations = {
     'footer.support247': '24/7 Support',
     'footer.supportEmail': 'Info@chipthem.com',
     'footer.generalInquiries': 'General inquiries & support',
-    'footer.supportPhone': '(555) SUPPORT',
+    'footer.supportPhone': '(+962 7 98 98 05 04) SUPPORT',
     'footer.hoursSatThu': 'Sat-Thu: 10AM-10PM',
     'footer.hoursFri': 'Friday: 2PM-10PM',
     'footer.followUs': 'Follow Us',
