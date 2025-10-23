@@ -21,6 +21,8 @@ import VetRegister from "./pages/VetRegister";
 import POLogin from "./pages/POLogin";
 import VLogin from "./pages/VLogin";
 import ALogin from "./pages/ALogin";
+import PrivacyPolicy from '@/pages/privacy';
+import TermsOfService from '@/pages/terms';
 
 const queryClient = new QueryClient();
 
@@ -37,6 +39,8 @@ const App = () => {
             {/* BrowserRouter for client-side routing */}
             <BrowserRouter>
               <Routes>
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<TermsOfService />} />
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/findclinic" element={<FindClinic />} />
