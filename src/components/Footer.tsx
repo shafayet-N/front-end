@@ -1,10 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-  import TermsOfService from '@/pages/TermsOfService';
-   import PrivacyPolicy from '@/pages/PrivacyPolicy';
-
-   // In your routes:
-   { path: '/pages/terms', element: <TermsOfService /> }
-   { path: '/pages/privacy', element: <PrivacyPolicy /> }
 import {
   Facebook,
   Instagram,
