@@ -196,7 +196,7 @@ const translations = {
     'footer.petRegistry': 'Pet Registry',
     'footer.description': 'Professional pet microchip registry connecting families with their beloved pets through innovative technology and 24/7 support.',
     'footer.lostPetEmergency': 'Lost Pet Emergency',
-    'footer.emergencyPhone': '+962 7 98 98 05 04T',
+    'footer.emergencyPhone': '+962 7 98 98 05 04',
     'footer.emergencyAvailable': 'Available 24/7 for immediate assistance.',
     'footer.services': 'Services',
     'footer.professionalMicrochipping': 'Professional Microchipping',
