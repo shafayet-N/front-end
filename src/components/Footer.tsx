@@ -200,8 +200,8 @@ const Footer = () => {
 
             {/* Legal Links */}
             <div className="flex items-center gap-4 text-sm text-gray-300">
-              <Link to="/pages/privacy" className="hover:text-white transition-colors">{t('footer.privacyPolicy')}</Link>
-              <Link to="/pages/terms" className="hover:text-white transition-colors">{t('footer.termsOfService')}</Link>
+              <Link to="/privacy" className="hover:text-white transition-colors">{t('footer.privacyPolicy')}</Link>
+              <Link to="/terms" className="hover:text-white transition-colors">{t('footer.termsOfService')}</Link>
               <Link to="/contact" className="hover:text-white transition-colors">{t('footer.contactUs')}</Link>
             </div>
           </div>
