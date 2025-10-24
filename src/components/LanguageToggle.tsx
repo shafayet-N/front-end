@@ -19,6 +19,7 @@ const LanguageToggle: React.FC = () => {
         bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700
         text-white shadow-lg hover:shadow-xl transition-all duration-300
         hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2
+        mt-[50px]
         ${isRTL ? 'ml-3' : 'mr-3'} ${isTransitioning ? 'opacity-75 cursor-not-allowed' : ''}
       `}
       aria-label={`${t('common.convert')} to ${targetLang}`}
