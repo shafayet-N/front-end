@@ -34,7 +34,7 @@ const LanguageToggle: React.FC = () => {
 
       {/* RTL indicator dot */}
       {isRTL && (
-        <div className="absolute -top-1 -right-1 w-3 h-3 bg-orange-400 rounded-full border-2 border-white animate-pulse" />
+        <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-orange-400 rounded-full border-2 border-white animate-pulse" />
       )}
 
       {/* Converting overlay */}
