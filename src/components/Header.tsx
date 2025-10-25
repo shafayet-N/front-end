@@ -46,7 +46,7 @@ const Header = () => {
           <SelectItem value="ar">
             <div className="flex items-center">
 
-              اEnglish
+              English
             </div>
           </SelectItem>
         </SelectContent>
