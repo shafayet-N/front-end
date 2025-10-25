@@ -30,7 +30,7 @@ const Header = () => {
             bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700
             text-white shadow-lg hover:shadow-xl transition-all duration-300
             hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2
-            fixed top-4 right-4 z-[60]
+    lg:fixed lg:top-4 lg:right-4 lg:z-[60] relative
             ${isTransitioning ? 'opacity-75 cursor-not-allowed' : ''}
           `}
         >
@@ -40,13 +40,13 @@ const Header = () => {
           <SelectItem value="en">
             <div className="flex items-center">
               <span className="mr-2">🇺🇸</span>
-              English
+               العربية
             </div>
           </SelectItem>
           <SelectItem value="ar">
             <div className="flex items-center">
               <span className="mr-2">🇸🇦</span>
-              العربية
+              اEnglish
             </div>
           </SelectItem>
         </SelectContent>
