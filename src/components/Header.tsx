@@ -39,13 +39,13 @@ const Header = () => {
         <SelectContent>
           <SelectItem value="en">
             <div className="flex items-center">
-              <span className="mr-2">🇺🇸</span>
+
                العربية
             </div>
           </SelectItem>
           <SelectItem value="ar">
             <div className="flex items-center">
-              <span className="mr-2">🇸🇦</span>
+
               اEnglish
             </div>
           </SelectItem>
