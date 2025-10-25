@@ -11,7 +11,7 @@ interface LanguageTransitionWrapperProps {
 const LanguageTransitionWrapper: React.FC<LanguageTransitionWrapperProps> = ({
   children,
   showConversionButton = true,
-  buttonPosition = 'top-right'
+  buttonPosition = 'bottom-leftt'
 }) => {
   const { isTransitioning, isRTL } = useLanguage();
 
