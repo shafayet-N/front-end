@@ -3,7 +3,7 @@ import LostFoundHero from "@/components/LostFoundHero";
 import LostFoundQuickActions from "@/components/LostFoundQuickActions";
 import LostFoundLostreport from "@/components/LostFoundLostreport";
 import LostFoundFoundreport from "@/components/LostFoundFoundreport";
-import LostFoundSupport from "@/components/LostFoundSupport";
+
 import Footer from "@/components/Footer";
 
 const LostFound = () => {
@@ -15,7 +15,7 @@ const LostFound = () => {
         <LostFoundQuickActions />
         <LostFoundLostreport />
         <LostFoundFoundreport />
-        <LostFoundSupport />
+
       </main>
       <Footer />
     </div>
