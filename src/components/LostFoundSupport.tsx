@@ -22,4 +22,4 @@ const LostFoundSupport: React.FC = () => {
   );
 };
 
-export default LostFoundSupport; *?}
+export default LostFoundSupport; */}
