@@ -381,7 +381,7 @@ const FindMain: React.FC = () => {
   };
 
   return (
-    <div className="mx-[300px] grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div className="mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
       <ClinicList getDirections={getDirections} focusOnClinic={focusOnClinic} />
       <InteractiveMap focusOnClinic={focusOnClinic} showEmergencyOnly={showEmergencyOnly} setShowEmergencyOnly={setShowEmergencyOnly} />
     </div>
