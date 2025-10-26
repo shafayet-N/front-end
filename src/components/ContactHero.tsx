@@ -31,14 +31,14 @@ const ContactSection: React.FC = () => {
           <p className="text-red-100 mb-4">
             {t('contact.emergencyDesc')}
           </p>
-          {/*
+    
           <a
             href="tel:+1-800-CHIP-PET"
             className="bg-white text-red-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors inline-block"
           >
             📞 1-800-CHIP-PET
           </a>
-          */}
+ 
         </div>
       </div>
     </section>
