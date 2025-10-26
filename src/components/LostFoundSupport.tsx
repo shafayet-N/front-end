@@ -1,4 +1,4 @@
-import React from "react";
+{/* import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const LostFoundSupport: React.FC = () => {
@@ -22,4 +22,4 @@ const LostFoundSupport: React.FC = () => {
   );
 };
 
-export default LostFoundSupport;
+export default LostFoundSupport; *?}
