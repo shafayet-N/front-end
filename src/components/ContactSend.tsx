@@ -170,10 +170,10 @@ const ContactSection: React.FC = () => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pet-primary focus:border-transparent transition-all duration-200"
                   >
                     <option value="">{t('contact.selectpriorityLevel')}</option>
-                    <option value="emergency">{t('contact.emergencypriorityLevel')}</option>
-                    <option value="urgent">{t('contact.urgentpriorityLevel')}</option>
-                    <option value="normal">{t('contact.normalpriorityLevel')}</option>
-                    <option value="low">{t('contact.lowpriorityLevel')}</option>
+                    <option value="Low">{t('contact.priority_Level_Low')}</option>
+                    <option value="Normal">{t('contact.Priority_Level_Normal')}</option>
+                    <option value="Urgent">{t('contact.Priority_Level_Urgent')}</option>
+                    <option value="Emergency">{t('contact.Priority_Level_Emergency')}</option>
                   </select>
                 </div>
 
