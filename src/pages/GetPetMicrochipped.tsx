@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, MapPin, AlertCircle, CheckCircle, Loader, ArrowRight, Wifi, Phone, Clock } from 'lucide-react';
 import Header from "@/components/Header";
-import RegisterHero from "@/components/RegisterHero";
+import RegisterHero1 from "@/components/RegisterHero1";
 import Footer from "@/components/Footer";
 
 const GetPetMicrochipped = () => {
@@ -137,7 +137,7 @@ const GetPetMicrochipped = () => {
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
             <div className="flex-1 bg-white">
-        <RegisterHero />
+        <RegisterHero1 />
                           </div>
       <main className="flex-1 bg-white pt-20 pb-[50px]">
         <div className="max-w-2xl mx-auto">
@@ -488,6 +488,7 @@ const GetPetMicrochipped = () => {
 };
 
 export default GetPetMicrochipped;   
+
 
 
 
