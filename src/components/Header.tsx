@@ -402,28 +402,38 @@ const Header = () => {
       </div>
 
       {/* Mobile Navigation */}
-      {mobileOpen && (
-        <div
-          className="lg:hidden mobile-menu px-4 pt-2 pb-6 space-y-1"
-          aria-label="Mobile menu"
+{mobileOpen && (
+  <div
+    className="lg:hidden mobile-menu px-4 pt-2 pb-6 space-y-1"
+    aria-label="Mobile menu"
+  >
+    {/* Navigation Links */}
+    <div className="space-y-1 mb-6">
+      {[
+        // Note: I'm assuming 'activeNav' state will determine 'active' status in a real app,
+        // but I kept your object structure to match your input.
+        { href: "/", label: t('nav.home'), active: true, bg: "bg-blue-50", text: "text-pet-primary" },
+        { href: "/about", label: t('nav.about') },
+        { href: "/findclinic", label: t('nav.findClinic') },
+        { href: "/search", label: t('nav.search') },
+        { href: "/lostfound", label: t('nav.lostFound') },
+        { href: "/successstories", label: t('nav.successStories') },
+        { href: "/contact", label: t('nav.contact') },
+      ].map(({ href, label, active, bg, text }) => (
+        <a
+          key={href}
+          href={href}
+          className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 flex items-center ${
+            active ? `${bg} ${text}` : "text-gray-700 hover:text-pet-primary hover:bg-gray-50"
+          }`}
         >
-          {/* Navigation Links */}
-          <div className="space-y-1 mb-6">
-            {[
-              { href: "/", label: t('nav.home'), active: true, bg: "bg-blue-50", text: "text-pet-primary" },
-              { href: "/about", label: t('nav.about') },
-              { href: "/findclinic", label: t('nav.findClinic') },
-              { href: "/search", label: t('nav.search') },
-              { href: "/lostfound", label: t('nav.lostFound') },
-              { href: "/successstories", label: t('nav.successStories') },
-              { href: "/contact", label: t('nav.contact') },
-            ].map(({ href, label, active, bg, text }) => (
-              <a
-                key={href}
-                href={href}
-                className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 flex items-center ${
-                  active ? `${bg} ${text}` : "text-gray-700 hover:text-pet-primary hover:bg-gray-50"
-                }`}
+          {label}
+        </a>
+      ))}
+    </div>
+    {/* You might want to add buttons or a language switcher here */}
+  </div>
+)}
               >
                 <svg
                   className="w-5 h-5 mr-3"
