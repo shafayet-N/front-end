@@ -139,7 +139,7 @@ const GetPetMicrochipped = () => {
             <div className="flex-1 bg-white">
         <RegisterHero />
                           </div>
-      <main className="flex-1 bg-white">
+      <main className="flex-1 bg-white pt-20">
         <div className="max-w-2xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12 animate-fade-in">
@@ -488,5 +488,6 @@ const GetPetMicrochipped = () => {
 };
 
 export default GetPetMicrochipped;   
+
 
 
