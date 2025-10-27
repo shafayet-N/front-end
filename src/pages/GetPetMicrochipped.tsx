@@ -42,12 +42,14 @@ return (
         </motion.button>
       </div>
     </main>
+  </div>
   );
 );
 
 
 
-  </div>
+
+export default GetPetMicrochipped;
 
 
 
