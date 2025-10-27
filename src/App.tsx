@@ -45,74 +45,7 @@ const App = () => {
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/findclinic" element={<FindClinic />} />
-                <Route path="/search" element={<Search />} />
-                <Route path="/lostfound" element={<LostFound />} />
-                <Route path="/successstories" element={<SuccessStories />} />
-                <Route path="/getpetmicrochipped" element={<GetPetMicrochipped />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/registerpet" element={<RegisterPet />} />
-                <Route path="/registersuccess" element={<Registersuccess />} />
-                <Route path="/registersuccessvet" element={<Registersuccessvet />} />
-                <Route path="/vetregister" element={<VetRegister />} />
-                <Route path="/pologin" element={<POLogin />} />
-                <Route path="/vlogin" element={<VLogin />} />
-                <Route path="/alogin" element={<ALogin />} />
-                {/* Catch-all route for 404 */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </BrowserRouter>
-          </LanguageTransitionWrapper>
-        </TooltipProvider>
-      </QueryClientProvider>
-    </LanguageProvider>
-  );
-};
-
-export default App;
-            <Toaster />
-            <Sonner />
-
-            {/* BrowserRouter for client-side routing */}
-            <BrowserRouter>
-              <Routes>
-                <Route path="/privacy" element={<PrivacyPolicy />} />
-                <Route path="/terms" element={<TermsOfService />} />
-                <Route path="/" element={<Index />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/findclinic" element={<FindClinic />} />
-                <Route path="/search" element={<Search />} />
-                <Route path="/lostfound" element={<LostFound />} />
-                <Route path="/successstories" element={<SuccessStories />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/getpetmicrochipped" element={<GetPetMicrochipped />} />
-                <Route path="/registerpet" element={<RegisterPet />} />
-                <Route path="/registersuccess" element={<Registersuccess />} />
-                <Route path="/registersuccessvet" element={<Registersuccessvet />} />
-                <Route path="/vetregister" element={<VetRegister />} />
-                <Route path="/pologin" element={<POLogin />} />
-                <Route path="/vlogin" element={<VLogin />} />
-                <Route path="/alogin" element={<ALogin />} />
-                {/* Catch-all route for 404 */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </BrowserRouter>
-          </LanguageTransitionWrapper>
-        </TooltipProvider>
-      </QueryClientProvider>
-    </LanguageProvider>
-  );
-};
-
-export default App;            <Sonner />
-
-            {/* BrowserRouter for client-side routing */}
-            <BrowserRouter>
-              <Routes>
-                <Route path="/privacy" element={<PrivacyPolicy />} />
-                <Route path="/terms" element={<TermsOfService />} />
-                <Route path="/" element={<Index />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/findclinic" element={<FindClinic />} />
+                 <Route path="/getpetmicrochipped" element={<GetPetMicrochipped />} />
                 <Route path="/search" element={<Search />} />
                 <Route path="/lostfound" element={<LostFound />} />
                 <Route path="/successstories" element={<SuccessStories />} />
@@ -136,3 +69,4 @@ export default App;            <Sonner />
 };
 
 export default App;
+
