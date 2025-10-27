@@ -48,7 +48,8 @@ return (
 
 
   </div>
-export default GetPetMicrochipped;
+
+
 
 
 
