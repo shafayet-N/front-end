@@ -102,51 +102,54 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex flex-1 justify-center">
-            <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-2' : 'space-x-2'}`}>
-              {[
-                { href: "/", label: t('nav.home') },
-                { href: "/about", label: t('nav.about') },
-                { href: "/findclinic", label: t('nav.findClinic') },
-                { href: "/search", label: t('nav.search') },
-                { href: "/lostfound", label: t('nav.lostFound') },
-                { href: "/successstories", label: t('nav.successStories') },
-                { href: "/contact", label: t('nav.contact') },
-              ].map(({ href, label }) => {
-                const isActive = activeNav === href;
-                return (
-                  <a
-                    key={href}
-                    href={href}
-                    onClick={() => setActiveNav(href)}
-                    aria-current={isActive ? "page" : undefined}
-                    className={`group relative nav-link px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                      isActive ? "active text-gray-700" : "text-gray-700 hover:text-gray-900"
-                    }`}
-                  >
-                    <span
-                      className={`transition-all duration-300 ${
-                        isActive
-                          ? "text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-emerald-500"
-                          : "group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-sky-500 group-hover:to-emerald-500"
-                      } ${
-                        label === t('nav.home') || label === t('nav.about')
-                          ? "hover:tracking-wide"
-                          : ""
-                      }`}
-                    >
-                      {label}
-                    </span>
-                    <span
-                      className={`pointer-events-none absolute left-3 right-3 bottom-0 h-0.5 rounded-full bg-gradient-to-r from-sky-400 to-emerald-400 transform transition-transform duration-300 origin-left ${
-                        isActive ? "scale-x-100" : "scale-x-0"
-                      }`}
-                    />
-                  </a>
-                );
-              })}
-            </div>
-          </div>
+<div className="hidden lg:flex flex-1 justify-center">
+  <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-2' : 'space-x-2'}`}>
+    {[
+      { href: "/", label: t('nav.home') },
+      { href: "/about", label: t('nav.about') },
+      { href: "/findclinic", label: t('nav.findClinic') },
+      { href: "/search", label: t('nav.search') },
+      { href: "/lostfound", label: t('nav.lostFound') },
+      { href: "/successstories", label: t('nav.successStories') },
+      { href: "/contact", label: t('nav.contact') },
+    ].map(({ href, label }) => {
+      const isActive = activeNav === href;
+      return (
+        <a
+          key={href}
+          href={href}
+          onClick={() => setActiveNav(href)}
+          aria-current={isActive ? "page" : undefined}
+          // CHANGE 1: Set active text to a solid blue-600 instead of a custom color/gradient-text
+          className={`group relative nav-link px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
+            isActive ? "active text-blue-600" : "text-gray-700 hover:text-gray-900"
+          }`}
+        >
+          <span
+            className={`transition-all duration-300 ${
+              // CHANGE 2: Remove the active state gradient text, ensuring it uses the parent <a> text color (text-blue-600)
+              isActive
+                ? "text-blue-600" // Set active text to solid blue
+                : "group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-sky-500 group-hover:to-emerald-500"
+            } ${
+              label === t('nav.home') || label === t('nav.about')
+                ? "hover:tracking-wide"
+                : ""
+            }`}
+          >
+            {label}
+          </span>
+          {/* UNDERLINE: Kept the underline transition for an enhanced active state */}
+          <span
+            className={`pointer-events-none absolute left-3 right-3 bottom-0 h-0.5 rounded-full bg-gradient-to-r from-sky-400 to-emerald-400 transform transition-transform duration-300 origin-left ${
+              isActive ? "scale-x-100" : "scale-x-0"
+            }`}
+          />
+        </a>
+      );
+    })}
+  </div>
+</div>
 
           {/* CTA Buttons */}
           <div className={`hidden lg:flex items-center ${isRTL ? 'space-x-reverse space-x-3' : 'space-x-3'}`}>
