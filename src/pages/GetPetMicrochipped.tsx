@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import Header from "@/components/Header";
-import RegisterHero1 from "@/components/RegisterHero1";
+import RegisterHeros from "@/components/RegisterHero1";
 import Footer from "@/components/Footer";
 
 
@@ -10,7 +10,7 @@ return (
   <div className="min-h-screen flex flex-col bg-white">
       <Header />
             <div className="flex-1 bg-white">
-        <RegisterHero1 />
+        <RegisterHeros />
                           </div>
 <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-6">
 <motion.h1
@@ -49,3 +49,4 @@ No
 
 
 export default GetPetMicrochipped;
+
