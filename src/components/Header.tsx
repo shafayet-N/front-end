@@ -201,7 +201,7 @@ const Header = () => {
                   aria-orientation="vertical"
                 >
                   <a
-                    href="/Get%20Pet%20Microchipped"
+                    href="/GetPetMicrochipped"
                     className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-orange-50 hover:text-pet-accent transition-colors"
                     onClick={() => setRegisterOpen(false)}
                     role="menuitem"
