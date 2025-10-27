@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, MapPin, AlertCircle, CheckCircle, Loader, ArrowRight, Wifi, Phone, Clock } from 'lucide-react';
 import Header from "@/components/Header";
+import RegisterHero from "@/components/RegisterHero";
 import Footer from "@/components/Footer";
 
 const GetPetMicrochipped = () => {
@@ -484,3 +485,4 @@ const GetPetMicrochipped = () => {
 };
 
 export default GetPetMicrochipped;   
+
