@@ -14,14 +14,14 @@ const RegisterHero: React.FC = () => {
 
         {/* Registration Steps */}
         <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
-          <div className="flex items-center text-white">
+          <div className="flex items-center text-white bg-white/20 px-4 py-2 rounded-lg">
             <div className="w-8 h-8 bg-white text-pet-primary rounded-full flex items-center justify-center font-bold mr-3">
               1
             </div>
             <span>{t('registerHero.step1')}</span>
           </div>
           <div className="hidden md:block text-white">→</div>
-          <div className="flex items-center text-white bg-white/20 px-4 py-2 rounded-lg">
+          <div className="flex items-center text-white">
             <div className="w-8 h-8 bg-white text-pet-primary rounded-full flex items-center justify-center font-bold mr-3">
               2
             </div>
