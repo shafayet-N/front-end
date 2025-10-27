@@ -44,14 +44,6 @@ return (
     </main>
   </div>
   );
-);
-
-
 
 
 export default GetPetMicrochipped;
-
-
-
-
-
