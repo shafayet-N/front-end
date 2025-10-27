@@ -46,4 +46,4 @@ return (
   );
 
 
-export default GetPetMicrochipped;
+
