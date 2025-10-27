@@ -136,6 +136,9 @@ const GetPetMicrochipped = () => {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
+            <div className="flex-1 bg-white">
+        <RegisterHero />
+                          </div>
       <main className="flex-1 bg-white">
         <div className="max-w-2xl mx-auto">
           {/* Header */}
@@ -485,4 +488,5 @@ const GetPetMicrochipped = () => {
 };
 
 export default GetPetMicrochipped;   
+
 
