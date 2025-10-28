@@ -54,11 +54,9 @@ const Header = () => {
     );
   };
 
-  // Refs for dropdown containers
   const registerRef = useRef<HTMLDivElement>(null);
   const loginRef = useRef<HTMLDivElement>(null);
 
-  // Handle clicking outside dropdowns
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (registerRef.current && !registerRef.current.contains(event.target as Node)) {
@@ -75,7 +73,6 @@ const Header = () => {
     };
   }, []);
 
-  // Update active nav based on current location
   useEffect(() => {
     setActiveNav(location.pathname);
   }, [location.pathname]);
@@ -102,54 +99,51 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-<div className="hidden lg:flex flex-1 justify-center">
-  <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-2' : 'space-x-2'}`}>
-    {[
-      { href: "/", label: t('nav.home') },
-      { href: "/about", label: t('nav.about') },
-      { href: "/findclinic", label: t('nav.findClinic') },
-      { href: "/search", label: t('nav.search') },
-      { href: "/lostfound", label: t('nav.lostFound') },
-      { href: "/successstories", label: t('nav.successStories') },
-      { href: "/contact", label: t('nav.contact') },
-    ].map(({ href, label }) => {
-      const isActive = activeNav === href;
-      return (
-        <a
-          key={href}
-          href={href}
-          onClick={() => setActiveNav(href)}
-          aria-current={isActive ? "page" : undefined}
-          // CHANGE 1: Set active text to a solid blue-600 instead of a custom color/gradient-text
-          className={`group relative nav-link px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-            isActive ? "active text-blue-600" : "text-gray-700 hover:text-gray-900"
-          }`}
-        >
-          <span
-            className={`transition-all duration-300 ${
-              // CHANGE 2: Remove the active state gradient text, ensuring it uses the parent <a> text color (text-blue-600)
-              isActive
-                ? "text-blue-600" // Set active text to solid blue
-                : "group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-sky-500 group-hover:to-emerald-500"
-            } ${
-              label === t('nav.home') || label === t('nav.about')
-                ? "hover:tracking-wide"
-                : ""
-            }`}
-          >
-            {label}
-          </span>
-          {/* UNDERLINE: Kept the underline transition for an enhanced active state */}
-          <span
-            className={`pointer-events-none absolute left-3 right-3 bottom-0 h-0.5 rounded-full bg-gradient-to-r from-sky-400 to-emerald-400 transform transition-transform duration-300 origin-left ${
-              isActive ? "scale-x-100" : "scale-x-0"
-            }`}
-          />
-        </a>
-      );
-    })}
-  </div>
-</div>
+          <div className="hidden lg:flex flex-1 justify-center">
+            <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-2' : 'space-x-2'}`}>
+              {[
+                { href: "/", label: t('nav.home') },
+                { href: "/about", label: t('nav.about') },
+                { href: "/findclinic", label: t('nav.findClinic') },
+                { href: "/search", label: t('nav.search') },
+                { href: "/lostfound", label: t('nav.lostFound') },
+                { href: "/successstories", label: t('nav.successStories') },
+                { href: "/contact", label: t('nav.contact') },
+              ].map(({ href, label }) => {
+                const isActive = activeNav === href;
+                return (
+                  <a
+                    key={href}
+                    href={href}
+                    onClick={() => setActiveNav(href)}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`group relative nav-link px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
+                      isActive ? "active text-blue-600" : "text-gray-700 hover:text-gray-900"
+                    }`}
+                  >
+                    <span
+                      className={`transition-all duration-300 ${
+                        isActive
+                          ? "text-blue-600"
+                          : "group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-sky-500 group-hover:to-emerald-500"
+                      } ${
+                        label === t('nav.home') || label === t('nav.about')
+                          ? "hover:tracking-wide"
+                          : ""
+                      }`}
+                    >
+                      {label}
+                    </span>
+                    <span
+                      className={`pointer-events-none absolute left-3 right-3 bottom-0 h-0.5 rounded-full bg-gradient-to-r from-sky-400 to-emerald-400 transform transition-transform duration-300 origin-left ${
+                        isActive ? "scale-x-100" : "scale-x-0"
+                      }`}
+                    />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
 
           {/* CTA Buttons */}
           <div className={`hidden lg:flex items-center ${isRTL ? 'space-x-reverse space-x-3' : 'space-x-3'}`}>
@@ -366,7 +360,6 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <div className={`lg:hidden flex items-center ${isRTL ? 'space-x-reverse space-x-2' : 'space-x-2'}`}>
-            {/* Mobile Language Toggle */}
             <LanguageSelect />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -402,106 +395,101 @@ const Header = () => {
       </div>
 
       {/* Mobile Navigation */}
-{mobileOpen && (
-  <div
-    className="lg:hidden mobile-menu px-4 pt-2 pb-6 space-y-1"
-    aria-label="Mobile menu"
-  >
-    {/* Navigation Links */}
-    <div className="space-y-1 mb-6">
-      {[
-        // Note: I'm assuming 'activeNav' state will determine 'active' status in a real app,
-        // but I kept your object structure to match your input.
-        { href: "/", label: t('nav.home'), active: true, bg: "bg-blue-50", text: "text-pet-primary" },
-        { href: "/about", label: t('nav.about') },
-        { href: "/findclinic", label: t('nav.findClinic') },
-        { href: "/search", label: t('nav.search') },
-        { href: "/lostfound", label: t('nav.lostFound') },
-        { href: "/successstories", label: t('nav.successStories') },
-        { href: "/contact", label: t('nav.contact') },
-      ].map(({ href, label, active, bg, text }) => (
-        <a
-          key={href}
-          href={href}
-          className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 flex items-center ${
-            active ? `${bg} ${text}` : "text-gray-700 hover:text-pet-primary hover:bg-gray-50"
-          }`}
+      {mobileOpen && (
+        <div
+          className="lg:hidden mobile-menu px-4 pt-2 pb-6 space-y-1"
+          aria-label="Mobile menu"
         >
-          {label}
-        </a>
-      ))}
-    </div>
-    {/* You might want to add buttons or a language switcher here */}
-  </div>
-)}
-              >
-                <svg
-                  className="w-5 h-5 mr-3"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+          {/* Navigation Links */}
+          <div className="space-y-1 mb-6">
+            {[
+              { href: "/", label: t('nav.home') },
+              { href: "/about", label: t('nav.about') },
+              { href: "/findclinic", label: t('nav.findClinic') },
+              { href: "/search", label: t('nav.search') },
+              { href: "/lostfound", label: t('nav.lostFound') },
+              { href: "/successstories", label: t('nav.successStories') },
+              { href: "/contact", label: t('nav.contact') },
+            ].map(({ href, label }) => {
+              const isActive = activeNav === href;
+              return (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={() => setActiveNav(href)}
+                  className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 flex items-center ${
+                    isActive
+                      ? "bg-blue-50 text-pet-primary"
+                      : "text-gray-700 hover:text-pet-primary hover:bg-gray-50"
+                  }`}
                 >
-                  {/* Icon path changes depending on label */}
-                  {label === t('nav.home') && (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                    />
-                  )}
-                  {label === t('nav.about') && (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  )}
-                  {label === t('nav.findClinic') && (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                    />
-                  )}
-                  {label === t('nav.search') && (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                    />
-                  )}
-                  {label === t('nav.lostFound') && (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  )}
-                  {label === t('nav.successStories') && (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                    />
-                  )}
-                  {label === t('nav.contact') && (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  )}
-                </svg>
-                {label}
-              </a>
-            ))}
+                  <svg
+                    className="w-5 h-5 mr-3"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    {label === t('nav.home') && (
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                      />
+                    )}
+                    {label === t('nav.about') && (
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    )}
+                    {label === t('nav.findClinic') && (
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                      />
+                    )}
+                    {label === t('nav.search') && (
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      />
+                    )}
+                    {label === t('nav.lostFound') && (
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    )}
+                    {label === t('nav.successStories') && (
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                      />
+                    )}
+                    {label === t('nav.contact') && (
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    )}
+                  </svg>
+                  {label}
+                </a>
+              );
+            })}
           </div>
 
           {/* Mobile Register Section */}
@@ -548,7 +536,7 @@ const Header = () => {
             {mobileRegisterOpen && (
               <div className="space-y-2 ml-4">
                 <a
-                  href="/registerpet"
+                  href="/getpetmicrochipped"
                   className="block bg-orange-100 text-orange-800 py-2 px-4 rounded-lg font-medium transition-all duration-200 hover:bg-orange-200"
                 >
                   <span className="flex items-center">
@@ -699,5 +687,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
