@@ -32,7 +32,7 @@ const App = () => {
     <LanguageProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <LanguageTransitionWrapper>
+
             {/* Toast notifications */}
             <Toaster />
             <Sonner />
@@ -61,7 +61,7 @@ const App = () => {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>
-          </LanguageTransitionWrapper>
+
         </TooltipProvider>
       </QueryClientProvider>
     </LanguageProvider>
