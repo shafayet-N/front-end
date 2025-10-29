@@ -4,7 +4,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
   const location = useLocation();
-  const { t, isRTL, language, setLanguage, isTransitioning } = useLanguage();
+  const { t, isRTL, language, setLanguage } = useLanguage();
   const [activeNav, setActiveNav] = useState("/");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileRegisterOpen, setMobileRegisterOpen] = useState(false);
@@ -15,7 +15,7 @@ const Header = () => {
   const toggleRegister = () => setRegisterOpen((v) => !v);
   const toggleLogin = () => setLoginOpen((v) => !v);
 
-  const toggleLanguage = () => {
+  const handleLanguageChange = () => {
     setLanguage(language === 'en' ? 'ar' : 'en');
   };
 
@@ -108,13 +108,10 @@ const Header = () => {
 
           {/* Desktop CTA Buttons */}
           <div className={`hidden lg:flex items-center gap-3`}>
-            {/* Language Toggle Button */}
+            {/* Language Button */}
             <button
-              onClick={toggleLanguage}
-              disabled={isTransitioning}
-              className={`px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 text-sm font-semibold ${
-                isTransitioning ? 'opacity-75 cursor-not-allowed' : ''
-              }`}
+              onClick={handleLanguageChange}
+              className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 text-sm font-semibold"
               aria-label={`Switch to ${language === 'en' ? 'Arabic' : 'English'}`}
             >
               {language === 'en' ? 'العربية' : 'English'}
@@ -238,11 +235,8 @@ const Header = () => {
           {/* Mobile Menu & Language Button */}
           <div className={`lg:hidden flex items-center gap-2`}>
             <button
-              onClick={toggleLanguage}
-              disabled={isTransitioning}
-              className={`px-3 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg text-xs font-semibold transition-all duration-300 ${
-                isTransitioning ? 'opacity-75 cursor-not-allowed' : ''
-              }`}
+              onClick={handleLanguageChange}
+              className="px-3 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg text-xs font-semibold transition-all duration-300"
               aria-label={`Switch to ${language === 'en' ? 'Arabic' : 'English'}`}
             >
               {language === 'en' ? 'ع' : 'EN'}
