@@ -65,7 +65,7 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex flex-1 justify-center">
-            <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-2' : 'space-x-2'}`}>
+            <div className={`flex items-center ${isRTL ? 'gap-2' : 'gap-2'}`}>
               {[
                 { href: "/", label: t('nav.home') },
                 { href: "/about", label: t('nav.about') },
@@ -96,9 +96,9 @@ const Header = () => {
                       {label}
                     </span>
                     <span
-                      className={`pointer-events-none absolute left-3 right-3 bottom-0 h-0.5 rounded-full bg-gradient-to-r from-sky-400 to-emerald-400 transform transition-transform duration-300 origin-left ${
-                        isActive ? "scale-x-100" : "scale-x-0"
-                      }`}
+                      className={`pointer-events-none absolute bottom-0 h-0.5 rounded-full bg-gradient-to-r from-sky-400 to-emerald-400 transform transition-transform duration-300 ${
+                        isRTL ? 'left-3 right-3 origin-right' : 'left-3 right-3 origin-left'
+                      } ${isActive ? "scale-x-100" : "scale-x-0"}`}
                     />
                   </a>
                 );
@@ -159,7 +159,9 @@ const Header = () => {
 
               {registerOpen && (
                 <div
-                  className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-elegant border border-gray-100 py-2 z-50"
+                  className={`absolute mt-2 w-56 bg-white rounded-xl shadow-elegant border border-gray-100 py-2 z-50 ${
+                    isRTL ? 'left-0' : 'right-0'
+                  }`}
                   role="menu"
                   aria-orientation="vertical"
                 >
@@ -208,7 +210,9 @@ const Header = () => {
               </button>
 
               {loginOpen && (
-                <div className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-elegant border border-gray-100 py-2 z-50" role="menu" aria-orientation="vertical">
+                <div className={`absolute mt-2 w-56 bg-white rounded-xl shadow-elegant border border-gray-100 py-2 z-50 ${
+                  isRTL ? 'left-0' : 'right-0'
+                }`} role="menu" aria-orientation="vertical">
                   <a href="/pologin" className="flex items-center px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition-colors" onClick={() => setLoginOpen(false)} role="menuitem">
                     <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -296,7 +300,7 @@ const Header = () => {
           {/* Mobile Register Button */}
           <button
             onClick={() => setMobileRegisterOpen(!mobileRegisterOpen)}
-            className="w-full flex items-center justify-between bg-gradient-to-r from-amber-500 to-orange-500 text-white py-2 px-4 rounded-lg text-sm font-semibold my-2 hover:from-amber-600 hover:to-orange-600 transition-all"
+            className={`w-full flex items-center justify-between bg-gradient-to-r from-amber-500 to-orange-500 text-white py-2 px-4 rounded-lg text-sm font-semibold my-2 hover:from-amber-600 hover:to-orange-600 transition-all ${isRTL ? 'flex-row-reverse' : ''}`}
             aria-expanded={mobileRegisterOpen}
           >
             <span>{t('nav.register')}</span>
@@ -306,7 +310,7 @@ const Header = () => {
           </button>
 
           {mobileRegisterOpen && (
-            <div className="space-y-2 ml-2 mb-2">
+            <div className={`space-y-2 mb-2 ${isRTL ? 'mr-2' : 'ml-2'}`}>
               <a href="/getpetmicrochipped" className="block bg-orange-100 text-orange-800 py-2 px-4 rounded-lg text-sm font-medium" onClick={() => setMobileOpen(false)}>
                 {t('nav.registerPet')}
               </a>
@@ -319,7 +323,7 @@ const Header = () => {
           {/* Mobile Login Button */}
           <button
             onClick={() => setMobileLoginOpen(!mobileLoginOpen)}
-            className="w-full flex items-center justify-between bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg text-sm font-semibold my-2 hover:from-blue-600 hover:to-blue-700 transition-all"
+            className={`w-full flex items-center justify-between bg-gradient-to-r from-blue-500 to-blue-600 text-white py-2 px-4 rounded-lg text-sm font-semibold my-2 hover:from-blue-600 hover:to-blue-700 transition-all ${isRTL ? 'flex-row-reverse' : ''}`}
             aria-expanded={mobileLoginOpen}
           >
             <span>{t('nav.login')}</span>
@@ -329,7 +333,7 @@ const Header = () => {
           </button>
 
           {mobileLoginOpen && (
-            <div className="space-y-2 ml-2">
+            <div className={`space-y-2 ${isRTL ? 'mr-2' : 'ml-2'}`}>
               <a href="/pologin" className="block bg-blue-100 text-blue-800 py-2 px-4 rounded-lg text-sm font-medium" onClick={() => setMobileOpen(false)}>
                 {t('nav.petOwnerLogin')}
               </a>
